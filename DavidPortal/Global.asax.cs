@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DavidCore.Concrete;
+using DavidPortal.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,15 @@ namespace DavidPortal
     {
         protected void Application_Start()
         {
+            using (DavidCloud davidCloud = new DavidCloud())
+            {
+                davidCloud.Database.CreateIfNotExists();
+            }
+            
+
+
             AreaRegistration.RegisterAllAreas();
+            UnityWebActivator.Start();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
