@@ -1,0 +1,14 @@
+﻿@model DavidPortal.Models.DeviceListView
+@{
+    ViewBag.Title = "设备列表";
+}
+
+@foreach (var p in Model.Devices)
+{
+    @Html.Partial("DeviceSummary", p)
+}
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</div>
+
