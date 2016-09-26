@@ -1,0 +1,11 @@
+﻿@using DavidCore.Entities;
+@model IEnumerable<Device>
+@{
+    ViewBag.Title = "设备列表";
+}
+
+@foreach (var p in Model)
+{
+    <h3>p.Name</h3>
+}
+
