@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace DavidCore.Abstract
 {
-    public interface IDeviceRepository
+    public interface IOrderProcessor
     {
-        IEnumerable<Device> Devices { get; }
-
-        void Save(Device device);
-
-        Device Delete(string deviceId);
+        void ProcessOrder(Cart cart, ShippingDetail shippingDetail);
     }
 }

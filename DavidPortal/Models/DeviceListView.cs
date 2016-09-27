@@ -10,5 +10,6 @@ namespace DavidPortal.Models
     {
         public IEnumerable<Device> Devices { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public string CurrentModel { get; set; }
     }
 }

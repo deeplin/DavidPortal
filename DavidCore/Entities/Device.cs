@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace DavidCore.Entities
 {
@@ -17,6 +16,7 @@ namespace DavidCore.Entities
         private float radius;
         private string locationAddress;
         private string locationDescribe;
+        [Display(Name = "设备序号")]
         public string DeviceId
         {
             get
@@ -29,6 +29,8 @@ namespace DavidCore.Entities
                 deviceId = value;
             }
         }
+        [Required(ErrorMessage = "请输入设备型号")]
+        [Display(Name = "设备型号")]
         public string Model
         {
             get
@@ -41,6 +43,7 @@ namespace DavidCore.Entities
                 model = value;
             }
         }
+        [Display(Name = "生产日期")]
         public DateTime ProductionDate
         {
             get
@@ -53,6 +56,7 @@ namespace DavidCore.Entities
                 productionDate = value;
             }
         }
+        [Display(Name = "网络地址")]
         public string NatIP
         {
             get
@@ -65,6 +69,7 @@ namespace DavidCore.Entities
                 natIP = value;
             }
         }
+        [Display(Name = "网络端口")]
         public int NatPort
         {
             get
@@ -77,6 +82,7 @@ namespace DavidCore.Entities
                 natPort = value;
             }
         }
+        [Display(Name = "纬度")]
         public double Latitude
         {
             get
@@ -89,6 +95,7 @@ namespace DavidCore.Entities
                 latitude = value;
             }
         }
+        [Display(Name = "经度")]
         public double Longitude
         {
             get
@@ -101,6 +108,7 @@ namespace DavidCore.Entities
                 longitude = value;
             }
         }
+        [Display(Name = "定位误差")]
         public float Radius
         {
             get
@@ -113,6 +121,8 @@ namespace DavidCore.Entities
                 radius = value;
             }
         }
+        [Required(ErrorMessage = "请输入设备地址")]
+        [Display(Name = "设备地址")]
         public string LocationAddress
         {
             get
@@ -125,6 +135,7 @@ namespace DavidCore.Entities
                 locationAddress = value;
             }
         }
+        [Display(Name = "地址描述")]
         public string LocationDescribe
         {
             get

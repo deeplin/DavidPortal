@@ -18,19 +18,24 @@ namespace DavidPortal.Controllers
         }
 
         // GET: Device
-        public ActionResult List(int page = 1)
+        public ActionResult List(string model, int page = 1)
         {
             DeviceListView deviceListView = new DeviceListView
             {
-                Devices = deviceRepository.Devices.OrderBy(device => device.DeviceId)
+                Devices = deviceRepository.Devices
+                .Where(device => model == null || device.Model == model)
+                .OrderBy(device => device.DeviceId)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = deviceRepository.Devices.Count()
-                }
+                    TotalItems = model == null ?
+                        deviceRepository.Devices.Count() :
+                        deviceRepository.Devices.Where(e => e.Model == model).Count()
+                },
+                CurrentModel = model
             };
 
             return View(deviceListView);

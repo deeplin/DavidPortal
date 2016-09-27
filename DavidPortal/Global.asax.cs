@@ -1,5 +1,7 @@
 ﻿using DavidCore.Concrete;
+using DavidCore.Entities;
 using DavidPortal.App_Start;
+using DavidPortal.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,9 @@ namespace DavidPortal
             AreaRegistration.RegisterAllAreas();
             UnityWebActivator.Start();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+
+            ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
         }
     }
 }

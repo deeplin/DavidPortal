@@ -39,6 +39,7 @@ namespace DavidPortal.App_Start
 
             // TODO: Register your types here
             container.RegisterType<IDeviceRepository, EFDeviceRepository>();
+            container.RegisterType<IOrderProcessor, EmailOrderProcessor>();
         }
     }
 }
