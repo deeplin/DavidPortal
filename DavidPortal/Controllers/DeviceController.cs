@@ -64,5 +64,16 @@ namespace DavidPortal.Controllers
                 return View(device);
             }
         }
+
+        public ActionResult Delete(string deviceId)
+        {
+            Device device = deviceRepository.Delete(deviceId);
+            if (device != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted",
+                    deviceId);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

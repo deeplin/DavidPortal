@@ -14,7 +14,7 @@ namespace DavidPortal.Models
         {
             get
             {
-                MenuViewModel menuViewModel = new MenuViewModel() { Menu = "地图", Controller = "", Action = "" };
+                MenuViewModel menuViewModel = new MenuViewModel() { Menu = "地图", Controller = "Map", Action = "Index" };
                 menuList.Add(menuViewModel);
                 menuViewModel = new MenuViewModel() { Menu = "医院", Controller = "Hospital", Action = "Index" };
                 menuList.Add(menuViewModel);

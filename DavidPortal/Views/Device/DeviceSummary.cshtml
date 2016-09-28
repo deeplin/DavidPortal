@@ -9,17 +9,20 @@
         <strong>@Model.Model</strong>
         <span class="pull-right label label-primary">@Model.ProductionDate.ToString()</span>
     </h3>
-    <div class="pull-right">
-        @Html.HiddenFor(x => x.DeviceId)
-        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-        <input type="submit" class="btn btn-success" value="编辑" />
-    </div>
-    @using (Html.BeginForm("Delete", "Device"))
+    @using (Html.BeginForm("Delete", "Device", FormMethod.Get))
     {
         <div class="pull-right">
             @Html.HiddenFor(x => x.DeviceId)
             @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
             <input type="submit" class="btn btn-success" value="删除" />
+        </div>
+    }
+    @using (Html.BeginForm("Edit", "Device", FormMethod.Get))
+    {
+        <div class="pull-right">
+            @Html.HiddenFor(x => x.DeviceId)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            <input type="submit" class="btn btn-success" value="编辑" />
         </div>
     }
     <span class="lead"> @Model.DeviceId</span>
