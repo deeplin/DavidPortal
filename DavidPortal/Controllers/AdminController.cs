@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace DavidPortal.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private IDeviceRepository deviceRepository;

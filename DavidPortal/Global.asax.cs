@@ -2,6 +2,7 @@
 using DavidCore.Entities;
 using DavidPortal.App_Start;
 using DavidPortal.Infrastructure;
+using DavidPortal.Infrastructure.Binders;
 using System;
 using System.Collections.Generic;
 using System.Linq;

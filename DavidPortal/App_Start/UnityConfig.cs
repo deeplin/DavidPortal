@@ -3,6 +3,9 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using DavidCore.Abstract;
 using DavidCore.Concrete;
+using DavidPortal.Infrastructure.Abstract;
+using DavidPortal.Infrastructure.Concrete;
+using DavidPortal.Models;
 
 namespace DavidPortal.App_Start
 {
@@ -40,6 +43,8 @@ namespace DavidPortal.App_Start
             // TODO: Register your types here
             container.RegisterType<IDeviceRepository, EFDeviceRepository>();
             container.RegisterType<IOrderProcessor, EmailOrderProcessor>();
+            container.RegisterType<IAuthProvider, FormsAuthProvider>();
+            container.RegisterType<IMenuProvider, MenuProvider>();
         }
     }
 }

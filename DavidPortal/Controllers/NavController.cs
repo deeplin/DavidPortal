@@ -1,4 +1,6 @@
 ﻿using DavidCore.Abstract;
+using DavidPortal.Infrastructure.Abstract;
+using DavidPortal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +11,16 @@ namespace DavidPortal.Controllers
 {
     public class NavController : Controller
     {
-        private IDeviceRepository deviceRepository;
-
-        public NavController(IDeviceRepository deviceRepository)
+        IMenuProvider menuProvier;
+        public NavController(IMenuProvider menuProvier)
         {
-            this.deviceRepository = deviceRepository;
+            this.menuProvier = menuProvier;
         }
 
-        public PartialViewResult Menu(string model = null)
+        public PartialViewResult Menu(string menu  = "")
         {
-
-            ViewBag.SelectedModel = model;
-
-            IEnumerable<string> models = deviceRepository.Devices
-                                    .Select(x => x.Model)
-                                    .Distinct()
-                                    .OrderBy(x => x);
-
-            return PartialView(models);
+            ViewBag.SelectedModel = menu;
+            return PartialView(menuProvier.MenuViewModels);
         }
     }
 }

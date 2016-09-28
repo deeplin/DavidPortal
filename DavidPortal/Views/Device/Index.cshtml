@@ -1,0 +1,21 @@
+﻿@model DavidPortal.Models.DeviceListView
+@{
+    ViewBag.Title = "设备列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var model in Model.Devices)
+{
+    @Html.Partial("DeviceSummary", model)
+}
+<div class="panel panel-default">
+    <div class="btn-group pull-right">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index",
+        new { page = x }))
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("添加设备", "Create", null,
+            new { @class = "btn btn-default" })
+    </div>
+</div>
+
