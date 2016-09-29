@@ -34,7 +34,7 @@ namespace DavidPortal.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Incorrect username or password");
+                    ModelState.AddModelError("", "用户名或者密码不正确");
                     return View();
                 }
             }

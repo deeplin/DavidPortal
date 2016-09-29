@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace DavidPortal.Controllers
 {
+    [Authorize]
     public class HospitalController : Controller
     {
         private IHospitalRepository hospitalRepository;
@@ -72,7 +73,7 @@ namespace DavidPortal.Controllers
             Hospital hospital = hospitalRepository.Delete(hospitalId);
             if (hospital != null)
             {
-                TempData["message"] = string.Format("{0} was deleted",
+                TempData["message"] = string.Format("{0} 已经删除",
                     hospitalId);
             }
             return RedirectToAction("Index");

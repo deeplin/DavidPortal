@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace DavidPortal.Controllers
 {
+    [Authorize]
     public class DeviceController : Controller
     {
         private IDeviceRepository deviceRepository;
@@ -71,7 +72,7 @@ namespace DavidPortal.Controllers
             Device device = deviceRepository.Delete(deviceId);
             if (device != null)
             {
-                TempData["message"] = string.Format("{0} was deleted",
+                TempData["message"] = string.Format("{0} 已经删除",
                     deviceId);
             }
             return RedirectToAction("Index");

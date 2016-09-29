@@ -12,11 +12,14 @@ namespace DavidPortal.Models
 
         public MenuProvider()
         {
-            MenuViewModel menuViewModel = new MenuViewModel() { Menu = "地图", Controller = "Map", Action = "Index" };
+            MenuViewModel menuViewModel = new MenuViewModel() {
+                Menu = "地图", Controller = "Map", Action = "Index" };
             menuList.Add(menuViewModel);
-            menuViewModel = new MenuViewModel() { Menu = "医院", Controller = "Hospital", Action = "Index" };
+            menuViewModel = new MenuViewModel() {
+                Menu = "医院", Controller = "Hospital", Action = "Index" };
             menuList.Add(menuViewModel);
-            menuViewModel = new MenuViewModel() { Menu = "设备", Controller = "Device", Action = "Index" };
+            menuViewModel = new MenuViewModel() {
+                Menu = "设备", Controller = "Device", Action = "Index" };
             menuList.Add(menuViewModel);
         }
 
