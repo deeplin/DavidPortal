@@ -1,0 +1,50 @@
+﻿@model DavidCore.Entities.Hospital
+@{
+    ViewBag.Title = "添加医院 " + Model.HospitalName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>编辑 @Model.HospitalName</h3>
+    </div>
+
+    @using (Html.BeginForm("Edit", "Hospital"))
+    {
+        <div class="panel-body">
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName)
+                {
+                    case "HospitalId":
+                    case "ImageMimeType":
+                        // do nothing
+                        break;
+                    default:
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @if (property.PropertyName == "Description")
+                            {
+                                @Html.TextArea(property.PropertyName, null,
+                                new { @class = "form-control", rows = 5 })
+                            }
+                            else
+                            {
+                                @Html.TextBox(property.PropertyName, null,
+                                new { @class = "form-control" })
+                            }
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                        break;
+                }
+            }
+        </div>
+
+        <div class="panel-footer">
+            <input type="submit" value="保存" class="btn btn-primary" />
+            @Html.ActionLink("返回", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
+
+

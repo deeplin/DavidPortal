@@ -190,8 +190,8 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\DeviceController.cs" />
+    <Compile Include="Controllers\HospitalController.cs" />
     <Compile Include="Controllers\NavController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +202,7 @@
     <Compile Include="Infrastructure\Concrete\FormsAuthProvider.cs" />
     <Compile Include="Models\CartIndexViewModel.cs" />
     <Compile Include="Models\DeviceListView.cs" />
+    <Compile Include="Models\HospitalListView.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Infrastructure\Concrete\MenuProvider.cs" />
     <Compile Include="Models\MenuViewModel.cs" />
@@ -226,6 +227,9 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Device\Edit.cshtml" />
+    <Content Include="Views\Hospital\Index.cshtml" />
+    <Content Include="Views\Hospital\HospitalSummary.cshtml" />
+    <Content Include="Views\Hospital\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

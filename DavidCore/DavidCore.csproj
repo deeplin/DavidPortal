@@ -78,14 +78,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IDeviceRepository.cs" />
+    <Compile Include="Abstract\IHospitalRepository.cs" />
     <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Concrete\DavidCloud.cs" />
     <Compile Include="Concrete\EFDeviceRepository.cs" />
+    <Compile Include="Concrete\EFHospitalRepository.cs" />
     <Compile Include="Concrete\EmailOrderProcessor.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Device.cs" />
     <Compile Include="Entities\Report.cs" />
     <Compile Include="Entities\ShippingDetail.cs" />
+    <Compile Include="Entities\Hospital.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

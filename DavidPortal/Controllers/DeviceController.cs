@@ -12,7 +12,8 @@ namespace DavidPortal.Controllers
     public class DeviceController : Controller
     {
         private IDeviceRepository deviceRepository;
-        private int pageSize = 2;
+        private int pageSize = 3;
+
         public DeviceController(IDeviceRepository deviceRepository)
         {
             this.deviceRepository = deviceRepository;

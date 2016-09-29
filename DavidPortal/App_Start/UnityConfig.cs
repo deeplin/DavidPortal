@@ -41,10 +41,12 @@ namespace DavidPortal.App_Start
             //container.LoadConfiguration();
 
             // TODO: Register your types here
-            container.RegisterType<IDeviceRepository, EFDeviceRepository>();
-            container.RegisterType<IOrderProcessor, EmailOrderProcessor>();
+            container.RegisterType<IDeviceRepository, EFDeviceRepository>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IHospitalRepository, EFHospitalRepository>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IMenuProvider, MenuProvider>(new ContainerControlledLifetimeManager());
             container.RegisterType<IAuthProvider, FormsAuthProvider>();
-            container.RegisterType<IMenuProvider, MenuProvider>();
+
+            container.RegisterType<IOrderProcessor, EmailOrderProcessor>();
         }
     }
 }

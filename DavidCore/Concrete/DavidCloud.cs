@@ -23,9 +23,13 @@ namespace DavidCore.Concrete
 
         public virtual DbSet<Device> Devices { get; set; }
         public virtual DbSet<Report> Reports { get; set; }
+        public virtual DbSet<Hospital> Hospitals { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            var hospitalTable = modelBuilder.Entity<Hospital>().ToTable("Hospitals");
+            hospitalTable.MapToStoredProcedures();
+
             var deviceTable = modelBuilder.Entity<Device>().ToTable("Devices");
             deviceTable.MapToStoredProcedures();
 

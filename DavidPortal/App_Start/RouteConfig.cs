@@ -16,7 +16,7 @@ namespace DavidPortal
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{page}",
-                defaults: new { controller = "Device", action = "Index", page = UrlParameter.Optional }
+                defaults: new { controller = "Hospital", action = "Index", page = UrlParameter.Optional }
             );
         }
     }
