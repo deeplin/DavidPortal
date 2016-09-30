@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DavidCore.Entities
+namespace DavidCore.Models
 {
     public class Hospital
     {

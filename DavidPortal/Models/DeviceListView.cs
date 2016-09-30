@@ -1,4 +1,4 @@
-﻿using DavidCore.Entities;
+﻿using DavidCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

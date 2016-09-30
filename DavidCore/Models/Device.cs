@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace DavidCore.Entities
+namespace DavidCore.Models
 {
     public class Device
     {

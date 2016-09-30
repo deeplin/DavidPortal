@@ -1,5 +1,5 @@
 ﻿using DavidCore.Concrete;
-using DavidCore.Entities;
+using DavidCore.Models;
 using DavidPortal.App_Start;
 using DavidPortal.Infrastructure;
 using System;

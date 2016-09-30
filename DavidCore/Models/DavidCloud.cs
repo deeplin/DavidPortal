@@ -1,6 +1,5 @@
-namespace DavidCore.Concrete
+namespace DavidCore.Models
 {
-    using DavidCore.Entities;
     using System;
     using System.Data.Entity;
     using System.Linq;

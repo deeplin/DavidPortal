@@ -1,5 +1,5 @@
 ﻿using DavidCore.Abstract;
-using DavidCore.Entities;
+using DavidCore.Models;
 using DavidPortal.Models;
 using System;
 using System.Collections.Generic;

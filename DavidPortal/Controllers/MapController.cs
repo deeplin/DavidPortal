@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace DavidPortal.Controllers
 {
+    [Authorize]
     public class MapController : Controller
     {
         // GET: Map
