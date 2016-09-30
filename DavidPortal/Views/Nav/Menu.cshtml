@@ -1,20 +1,21 @@
 ﻿@using DavidPortal.Models
 @model IEnumerable<MenuViewModel>
 
-@Html.ActionLink("菜单", "Index", "Device", null,
+@Html.ActionLink("菜单", "Index", "Map", null,
     new { @class = "btn btn-block btn-default btn-lg" })
 
 @foreach (var menuViewModel in Model)
 {
+
     @Html.RouteLink(menuViewModel.Menu, new
-    {
-        controller = menuViewModel.Controller,
-        action = menuViewModel.Action,
-        menu= menuViewModel.Controller,
-        page = 1
-    }, new
-    {
-        @class = "btn btn-block btn-default btn-lg"
+   {
+       controller = menuViewModel.Controller,
+       action = menuViewModel.Action,
+       menu = menuViewModel.Controller,
+       page = 1
+   }, new
+   {
+       @class = "btn btn-block btn-default btn-lg"
                         + (menuViewModel.Controller == ViewBag.SelectedModel ? " btn-primary" : "")
-    })
+   })
 }
