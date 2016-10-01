@@ -45,6 +45,10 @@ namespace DavidPortal.App_Start
             container.RegisterType<IHospitalRepository, EFHospitalRepository>(new ContainerControlledLifetimeManager());
             container.RegisterType<IMenuProvider, MenuProvider>(new ContainerControlledLifetimeManager());
             container.RegisterType<IAuthProvider, FormsAuthProvider>();
+
+            IDeviceRepository deviceRepository = container.Resolve<IDeviceRepository>();
+            IHospitalRepository hospitalRepositoy = container.Resolve<IHospitalRepository>();
+            IMenuProvider menuProvider = container.Resolve<IMenuProvider>();
         }
     }
 }
