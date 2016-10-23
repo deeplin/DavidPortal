@@ -2,12 +2,16 @@
 
 <div class="well">
     <h3>
-        <strong>@Model.DeviceId</strong>
+        <strong>@Model.Model</strong>
         <span class="pull-right label label-primary">@Model.ProductionDate.ToString()</span>
     </h3>
     <h3>
-        <strong>@Model.Model</strong>
-        <span class="pull-right label label-primary">@Model.ProductionDate.ToString()</span>
+        <strong>@Model.LocationAddress</strong>
+        <span class="pull-right">@Model.LocationDescribe</span>
+    </h3>
+    <h3>
+        <strong>@Model.Longitude &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+        <strong>@Model.Latitude</strong>
     </h3>
     @using (Html.BeginForm("Delete", "Device", FormMethod.Get))
     {
