@@ -199,7 +199,6 @@
     <Compile Include="Infrastructure\Abstract\IAuthProvider.cs" />
     <Compile Include="Infrastructure\Abstract\IMenuProvider.cs" />
     <Compile Include="Infrastructure\Concrete\FormsAuthProvider.cs" />
-    <Compile Include="Models\DeviceInfo.cs" />
     <Compile Include="Models\DeviceListView.cs" />
     <Compile Include="Models\HospitalListView.cs" />
     <Compile Include="Models\LoginViewModel.cs" />

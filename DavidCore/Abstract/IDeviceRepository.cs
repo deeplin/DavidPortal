@@ -9,10 +9,10 @@ namespace DavidCore.Abstract
 {
     public interface IDeviceRepository
     {
-        IEnumerable<Device> Devices { get; }
+        IEnumerable<DavidConsole> Devices { get; }
 
-        void Save(Device device);
+        void Save(DavidConsole davidConsole);
 
-        Device Delete(string deviceId);
+        DavidConsole Delete(string deviceId);
     }
 }

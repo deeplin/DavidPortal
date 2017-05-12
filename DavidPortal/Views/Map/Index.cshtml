@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DeviceReport>
+﻿@model IEnumerable<DavidCore.Models.DavidConsole>
 
 @{
     ViewBag.Title = "Index";
@@ -36,25 +36,26 @@
     }
     var map = new BMap.Map("container");          // 创建地图实例
 
-    @foreach (var deviceReport in Model)
+    @foreach (var davidConsole in Model)
     {
     <text>
     // 创建点坐标
-    var point = new BMap.Point(@deviceReport.device.Longitude, @deviceReport.device.Latitude);
-    var label = new BMap.Label("@deviceReport.device.Model",{offset:new BMap.Size(-20,-20)});
-    var content = "型号:" +"@deviceReport.device.Model"
-        + " 生产日期:" +"@deviceReport.device.ProductionDate.ToString()"
-        + " 地址:" + "@deviceReport.device.LocationAddress"
-        + " 肤温:" + "@deviceReport.report.SkinTemperature"
-        + " 箱温:" + "@deviceReport.report.BoxTemperature"
-        + " 湿度:" + "@deviceReport.report.Humidity"
-        + " O2:" + "@deviceReport.report.Oxygen";
+    var point = new BMap.Point(@davidConsole.BaiduLocation.Longitude, @davidConsole.BaiduLocation.Latitude);
+    var label = new BMap.Label("@davidConsole.DeviceModel",{offset:new BMap.Size(-20,-20)});
+    var content = "型号:" + "@davidConsole.DeviceModel"
+        + " 生产日期:" + "@davidConsole.ManufactureDate"
+        + " 肤温:" + "@davidConsole.Analog.Skin"
+        + " 箱温:" + "@davidConsole.Analog.Air"
+        + " 湿度:" + "@davidConsole.Analog.Hum"
+        + " O2:" + "@davidConsole.Analog.O2"
+        + " SPO2:" + "@davidConsole.Analog.SPO2"
+        + " PR:" + "@davidConsole.Analog.PR";
     addMarker(point, content);
     </text>
     }
     map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别
-    //map.addControl(new BMap.NavigationControl());
-    //map.addControl(new BMap.ScaleControl());
-    //map.addControl(new BMap.OverviewMapControl());
-    //map.addControl(new BMap.MapTypeControl());
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.ScaleControl());
+    map.addControl(new BMap.OverviewMapControl());
+    map.addControl(new BMap.MapTypeControl());
 </script>

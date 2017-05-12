@@ -24,9 +24,9 @@ namespace DavidCore.Concrete
             {
                 dbEntry.HospitalId = hospital.HospitalId;
                 dbEntry.HospitalAddress = hospital.HospitalAddress;
-                dbEntry.contactName = hospital.contactName;
-                dbEntry.contactPhone = hospital.contactPhone;
-                dbEntry.contactMobile = hospital.contactMobile;
+                dbEntry.ContactName = hospital.ContactName;
+                dbEntry.ContactPhone = hospital.ContactPhone;
+                dbEntry.ContactMobile = hospital.ContactMobile;
             }
             else
             {

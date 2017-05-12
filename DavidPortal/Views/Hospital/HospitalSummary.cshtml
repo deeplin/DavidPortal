@@ -5,9 +5,9 @@
         <strong>@Model.HospitalId&nbsp;:&nbsp;@Model.HospitalName</strong>
     </h3>
     <h3>
-        @Model.contactName
-        <span class="pull-right label label-primary">@Model.contactPhone</span>
-        <span class="pull-right label label-primary">@Model.contactMobile</span>
+        @Model.ContactName
+        <span class="pull-right label label-primary">@Model.ContactPhone</span>
+        <span class="pull-right label label-primary">@Model.ContactMobile</span>
     </h3>
     @using (Html.BeginForm("Delete", "Hospital", FormMethod.Get))
     {

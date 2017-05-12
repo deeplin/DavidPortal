@@ -19,8 +19,7 @@ namespace DavidCore.Models
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
-        public virtual DbSet<Device> Devices { get; set; }
-        public virtual DbSet<Report> Reports { get; set; }
+        public virtual DbSet<DavidConsole> DavidConsoles { get; set; }
         public virtual DbSet<Hospital> Hospitals { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -28,11 +27,8 @@ namespace DavidCore.Models
             var hospitalTable = modelBuilder.Entity<Hospital>().ToTable("Hospitals");
             hospitalTable.MapToStoredProcedures();
 
-            var deviceTable = modelBuilder.Entity<Device>().ToTable("Devices");
-            deviceTable.MapToStoredProcedures();
-
-            var reportTable = modelBuilder.Entity<Report>().ToTable("Reports");
-            reportTable.MapToStoredProcedures();
+            var DavidConsoleTable = modelBuilder.Entity<DavidConsole>().ToTable("DavidConsoles");
+            DavidConsoleTable.MapToStoredProcedures();
 
             base.OnModelCreating(modelBuilder);
         }

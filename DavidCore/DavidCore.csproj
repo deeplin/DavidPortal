@@ -79,13 +79,13 @@
   <ItemGroup>
     <Compile Include="Abstract\IDeviceRepository.cs" />
     <Compile Include="Abstract\IHospitalRepository.cs" />
-    <Compile Include="Abstract\IReportRepository.cs" />
-    <Compile Include="Concrete\EFReportRepository.cs" />
+    <Compile Include="Models\Analog.cs" />
+    <Compile Include="Models\BaiduLocation.cs" />
     <Compile Include="Models\DavidCloud.cs" />
-    <Compile Include="Concrete\EFDeviceRepository.cs" />
+    <Compile Include="Concrete\EFDavidConsoleRepository.cs" />
     <Compile Include="Concrete\EFHospitalRepository.cs" />
-    <Compile Include="Models\Device.cs" />
-    <Compile Include="Models\Report.cs" />
+    <Compile Include="Models\DavidConsole.cs" />
+    <Compile Include="Models\Alert.cs" />
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

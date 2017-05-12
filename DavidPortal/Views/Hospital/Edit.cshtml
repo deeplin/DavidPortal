@@ -17,7 +17,8 @@
                 switch (property.PropertyName)
                 {
                     case "HospitalId":
-                        // do nothing
+                        @Html.TextBox(property.PropertyName, null,
+                                new { @class = "form-control" })
                         break;
                     default:
                         <div class="form-group">

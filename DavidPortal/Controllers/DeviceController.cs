@@ -26,7 +26,7 @@ namespace DavidPortal.Controllers
             DeviceListView deviceListView = new DeviceListView
             {
                 Devices = deviceRepository.Devices
-                .OrderBy(device => device.DeviceId)
+                .OrderBy(device => device.DavidConsoleId)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize),
                 PagingInfo = new PagingInfo
@@ -41,23 +41,23 @@ namespace DavidPortal.Controllers
 
         public ViewResult Create()
         {
-            return View("Edit", new Device());
+            return View("Edit", new DavidConsole());
         }
 
         public ViewResult Edit(string deviceId)
         {
-            Device device = deviceRepository.Devices
-                .FirstOrDefault(d => d.DeviceId == deviceId);
+            DavidConsole device = deviceRepository.Devices
+                .FirstOrDefault(d => d.DavidConsoleId == deviceId);
             return View(device);
         }
 
         [HttpPost]
-        public ActionResult Edit(Device device)
+        public ActionResult Edit(DavidConsole device)
         {
             if (ModelState.IsValid)
             {
                 deviceRepository.Save(device);
-                TempData["message"] = string.Format("{0} 已经保存", device.DeviceId);
+                TempData["message"] = string.Format("{0} 已经保存", device.DavidConsoleId);
                 return RedirectToAction("Index");
             }
             else
@@ -69,7 +69,7 @@ namespace DavidPortal.Controllers
 
         public ActionResult Delete(string deviceId)
         {
-            Device device = deviceRepository.Delete(deviceId);
+            DavidConsole device = deviceRepository.Delete(deviceId);
             if (device != null)
             {
                 TempData["message"] = string.Format("{0} 已经删除",

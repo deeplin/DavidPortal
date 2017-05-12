@@ -8,7 +8,7 @@ namespace DavidPortal.Models
 {
     public class DeviceListView
     {
-        public IEnumerable<Device> Devices { get; set; }
+        public IEnumerable<DavidConsole> Devices { get; set; }
         public PagingInfo PagingInfo { get; set; }
     }
 }

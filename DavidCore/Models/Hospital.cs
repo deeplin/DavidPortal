@@ -22,14 +22,14 @@ namespace DavidCore.Models
 
         [Display(Name = "联系人姓名")]
         [MaxLength(32)]
-        public string contactName { get; set; }
+        public string ContactName { get; set; }
 
         [Display(Name = "联系人电话")]
         [MaxLength(32)]
-        public string contactPhone { get; set; }
+        public string ContactPhone { get; set; }
 
         [Display(Name = "联系人手机")]
         [MaxLength(32)]
-        public string contactMobile { get; set; }
+        public string ContactMobile { get; set; }
     }
 }
