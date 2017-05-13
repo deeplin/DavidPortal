@@ -1,4 +1,5 @@
 ﻿using DavidCore.Abstract;
+using DavidCore.Concrete;
 using DavidCore.Models;
 using DavidPortal.Models;
 using System;
@@ -20,7 +21,8 @@ namespace DavidPortal.Controllers
 
         public ActionResult Index()
         {
-            IEnumerable<DavidConsole> davidConsoles = deviceRepository.Devices.OrderBy
+            IDeviceRepository repository = new EFDavidConsoleRepository();
+            IEnumerable<DavidConsole> davidConsoles = repository.Devices.OrderBy
                 (DavidConsole => DavidConsole.DavidConsoleId);
             return View(davidConsoles);
         }

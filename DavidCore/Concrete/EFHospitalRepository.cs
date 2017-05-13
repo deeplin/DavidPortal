@@ -23,6 +23,7 @@ namespace DavidCore.Concrete
             if (dbEntry != null)
             {
                 dbEntry.HospitalId = hospital.HospitalId;
+                dbEntry.HospitalName = hospital.HospitalName;
                 dbEntry.HospitalAddress = hospital.HospitalAddress;
                 dbEntry.ContactName = hospital.ContactName;
                 dbEntry.ContactPhone = hospital.ContactPhone;
