@@ -52,11 +52,6 @@ namespace DavidCore.Models
 
         public String TokenBase64 { get; set; }
 
-        [Display(Name = "医院")]
-        public Hospital Hospital { get; set; }
-
-        public Alert Alert { get; set; }
-
         public Analog Analog { get; set; }
     }
 }

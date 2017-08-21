@@ -31,8 +31,6 @@ namespace DavidCore.Concrete
                 dbEntry.LoginTime = davidConsole.LoginTime;
                 dbEntry.HeartBeatTime = davidConsole.HeartBeatTime;
                 dbEntry.BaiduLocation = davidConsole.BaiduLocation;
-                dbEntry.Hospital = davidConsole.Hospital;
-                dbEntry.Alert = davidConsole.Alert;
             }else
             {
                 davidCloud.DavidConsoles.Add(davidConsole);
